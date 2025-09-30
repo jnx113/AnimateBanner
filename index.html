@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="animation-container">
+      <div class="ring"><img src="media/left-up.svg" alt="" /></div>
+      <div class="ring"><img src="media/left-center.svg" alt="" /></div>
+      <div class="ring"><img src="media/left-bottom.svg" alt="" /></div>
+      <div class="ring"><img src="media/middle-bottom.svg" alt="" /></div>
+      <div class="ring"><img src="media/right-bottom.svg" alt="" /></div>
+      <div class="ring"><img src="media/right-center.svg" alt="" /></div>
+      <div class="ring"><img src="media/top-center.svg" alt="" /></div>
+      <div class="ring"><img src="media/top-right.svg" alt="" /></div>
+      <div class="content">
+        <div class="title">
+          <div class="ring-container">
+            <img src="media/ring-left.svg" alt="" class="left-ring" />
+            <img src="media/ring-center.svg" alt="" class="center-ring" />
+            <img src="media/ring-right.svg" alt="" class="right-ring" />
+          </div>
+          <h1 class="animated-text">walllet.com</h1>
+        </div>
+        <div class="main-text">
+          <p class="first-txt animated-text">It`s not a wallet,</p>
+          <p class="second-txt animated-text">It`s walllet.</p>
+        </div>
+        <div class="functions">
+          <p>Send, Receive,<br />Store and do more</p>
+          <div class="platform"></div>
+          <p>Earn, Trade,<br />discover apps</p>
+        </div>
+        <button><span>Get walllet</span></button>
+      </div>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".animated-text").forEach((el) => {
+          const text = el.textContent;
+          el.textContent = "";
+          [...text].forEach((letter, i) => {
+            const span = document.createElement("span");
+            span.textContent = letter;
+            span.style.animationDelay = `${i * 0.07}s`; // задержка между буквами
+            el.appendChild(span);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
